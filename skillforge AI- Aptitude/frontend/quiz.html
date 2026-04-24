@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adaptive Quiz - SkillForge AI</title>
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/app.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="app-body">
+
+    <nav class="app-navbar">
+        <div class="logo">SkillForge AI</div>
+        <div class="nav-links">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="learning.html">Learning</a>
+            <a href="analytics.html">Analytics</a>
+            <a href="#" id="logoutBtn" class="btn-text">Log Out</a>
+        </div>
+    </nav>
+
+    <main class="quiz-container">
+        <div id="quizLoading" class="quiz-card">
+            <div class="spinner"></div>
+            <h3>Preparing your adaptive session...</h3>
+        </div>
+
+        <div id="quizContent" class="quiz-card hidden">
+            <div class="quiz-header">
+                <div class="badges">
+                    <span id="topicBadge" class="badge">Topic</span>
+                    <span id="levelBadge" class="badge badge-level">Level</span>
+                </div>
+                <div class="quiz-timer">
+                    ⏱️ <span id="timeDisplay">00:00</span>
+                </div>
+            </div>
+
+            <h2 id="questionText" class="question-text">Loading question...</h2>
+
+            <div id="optionsContainer" class="options-container">
+                <!-- Options injected here -->
+            </div>
+
+            <button id="submitBtn" class="btn-primary btn-large btn-full hidden">Submit Answer</button>
+        </div>
+    </main>
+
+    <!-- Feedback Modal -->
+    <div id="feedbackModal" class="feedback-overlay hidden">
+        <div class="feedback-card">
+            <h2 id="feedbackTitle">Correct! 🎉</h2>
+            <p id="feedbackMessage">Excellent work.</p>
+            
+            <div class="explanation-box">
+                <strong>Explanation:</strong>
+                <p id="feedbackExplanation">Detailed explanation goes here.</p>
+            </div>
+
+            <div class="level-status">
+                Current Standing: <strong id="feedbackLevel">L1</strong>
+            </div>
+
+            <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                <button id="nextQuestionBtn" class="btn-primary" style="flex: 1;">Next Question</button>
+                <button id="endSessionBtn" class="btn-secondary" style="flex: 1;">End Session</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/api.js"></script>
+    <script src="/js/quiz.js"></script>
+    <script src="/js/chatbot.js"></script>
+</body>
+</html>

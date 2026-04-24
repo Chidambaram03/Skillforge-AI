@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - SkillForge AI</title>
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/app.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="app-body">
+
+    <nav class="app-navbar">
+        <div class="logo">SkillForge AI</div>
+        <div class="nav-links">
+            <a href="dashboard.html" class="active">Dashboard</a>
+            <a href="learning.html">Learning</a>
+            <a href="analytics.html">Analytics</a>
+            <a href="#" id="logoutBtn" class="btn-text">Log Out</a>
+        </div>
+    </nav>
+
+    <main class="dashboard-container">
+        <header class="dashboard-header">
+            <h2>Welcome, <span id="userNameDisplay">Student</span>!</h2>
+            <p>Ready to push your cognitive limits today?</p>
+        </header>
+
+        <section class="overview-cards">
+            <div class="card">
+                <h3>Current Thinking Level</h3>
+                <div class="stat-value" id="thinkingLevelDisplay">Loading...</div>
+                <p class="stat-desc">Based on your adaptive performance</p>
+            </div>
+            <div class="card">
+                <h3>Overall Accuracy</h3>
+                <div class="stat-value" id="accuracyDisplay">--%</div>
+                <p class="stat-desc">Across all attempted topics</p>
+            </div>
+            <div class="card">
+                <h3>Avg. Response Speed</h3>
+                <div class="stat-value" id="speedDisplay">--s</div>
+                <p class="stat-desc">Your quickness index</p>
+            </div>
+        </section>
+
+        <section class="dashboard-actions">
+            <div class="action-card primary-action">
+                <h3>Practice Adaptive Quiz</h3>
+                <p>Jump into a session tailored specifically to your current L-rank. Questions adapt in real-time.</p>
+                <a href="quiz.html" class="btn-primary">Start Session</a>
+            </div>
+        </section>
+
+        <!-- Initializing Chart structure for Dashboard overview -->
+        <section class="dashboard-charts">
+            <div class="chart-container card">
+                <h3>Performance Heatmap</h3>
+                <canvas id="heatmapChart"></canvas>
+            </div>
+        </section>
+
+    </main>
+    <script src="/js/api.js"></script>
+    <script src="/js/dashboard.js"></script>
+    <script src="/js/chatbot.js"></script>
+</body>
+</html>

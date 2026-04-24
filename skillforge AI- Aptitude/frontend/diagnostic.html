@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagnostic Test | SkillForge AI</title>
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/auth.css">
+    <style>
+        .quiz-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-top: 30px;
+        }
+        .options-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .option-btn {
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background: #fff;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-align: left;
+        }
+        .option-btn:hover {
+            border-color: var(--primary-blue);
+            background: #f0f7ff;
+        }
+        .option-btn.selected {
+            background: var(--primary-blue);
+            color: white;
+            border-color: var(--primary-blue);
+        }
+        #progress {
+            margin-bottom: 20px;
+            font-weight: 600;
+            color: var(--primary-blue);
+        }
+    </style>
+</head>
+<body class="auth-body">
+    <div class="auth-container">
+        <div class="auth-card" style="max-width: 600px;">
+            <div id="introView">
+                <h1>Welcome to SkillForge AI</h1>
+                <p>Before we start, let's determine your baseline skill level with a quick 5-question diagnostic test.</p>
+                <button class="btn-primary" style="width: 100%; margin-top: 20px;" id="startBtn">Start Diagnostic</button>
+            </div>
+
+            <div id="quizView" style="display: none;">
+                <div id="progress">Question 1 of 5</div>
+                <h3 id="questionText">Loading question...</h3>
+                <div class="options-grid" id="optionsGrid">
+                    <!-- Options injected here -->
+                </div>
+                <button class="btn-primary" style="width: 100%; margin-top: 30px;" id="nextBtn" disabled>Next Question</button>
+            </div>
+
+            <div id="resultView" style="display: none; text-align: center;">
+                <h2>Diagnostic Complete!</h2>
+                <p id="levelResult">Assessing your level...</p>
+                <button class="btn-primary" style="width: 100%; margin-top: 20px;" id="finishBtn">Enter Dashboard</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/api.js"></script>
+    <script src="/js/diagnostic.js"></script>
+</body>
+</html>

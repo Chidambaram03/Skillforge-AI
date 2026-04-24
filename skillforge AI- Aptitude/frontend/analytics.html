@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics Dashboard - SkillForge AI</title>
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/app.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="app-body">
+
+    <nav class="app-navbar">
+        <div class="logo">SkillForge AI</div>
+        <div class="nav-links">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="learning.html">Learning</a>
+            <a href="analytics.html" class="active">Analytics</a>
+            <a href="#" id="logoutBtn" class="btn-text">Log Out</a>
+        </div>
+    </nav>
+
+    <main class="analytics-container">
+        <header class="dashboard-header">
+            <h2>Your Cognitive Profile</h2>
+            <p>Tracking your progress across accuracy, speed, and topic mastery.</p>
+        </header>
+
+        <section class="charts-grid">
+            <div class="chart-card">
+                <h3>Overall Accuracy Trend</h3>
+                <div class="chart-container">
+                    <canvas id="accuracyChart"></canvas>
+                </div>
+            </div>
+            
+            <div class="chart-card">
+                <h3>Avg. Response Time</h3>
+                <div class="chart-container">
+                    <canvas id="speedChart"></canvas>
+                </div>
+            </div>
+
+            <div class="chart-card full-width">
+                <h3>Topic Mastery Breakdown</h3>
+                <div class="chart-container" style="height: 450px;">
+                    <canvas id="topicMasteryChart"></canvas>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="/js/api.js"></script>
+    <script src="/js/analytics.js"></script>
+    <script src="/js/chatbot.js"></script>
+</body>
+</html>

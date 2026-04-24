@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Center - SkillForge AI</title>
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="/css/learning.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="app-body">
+
+    <nav class="app-navbar">
+        <div class="logo">SkillForge AI</div>
+        <div class="nav-links">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="learning.html" class="active">Learning</a>
+            <a href="analytics.html">Analytics</a>
+            <a href="#" id="logoutBtn" class="btn-text">Log Out</a>
+        </div>
+    </nav>
+
+    <main class="learning-container">
+        <aside class="topic-sidebar">
+            <h3>Aptitude Topics</h3>
+            <ul id="topicList">
+                <!-- Topics will be loaded here -->
+                <li class="loading">Loading topics...</li>
+            </ul>
+        </aside>
+
+        <section class="video-content">
+            <div id="noSelection" class="empty-state">
+                <div class="empty-icon">📺</div>
+                <h2>Explore Learning Topics</h2>
+                <p>Select a topic from the sidebar to watch explanation videos and master the concepts.</p>
+            </div>
+
+            <div id="videoPlayerSection" class="hidden">
+                <h2 id="currentTopicTitle">Topic Name</h2>
+                <div class="video-wrapper">
+                    <iframe id="videoIframe" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="topic-details">
+                    <h3>Description</h3>
+                    <p id="topicDescription">Topic detailed explanation will appear here.</p>
+                </div>
+                <div class="action-footer">
+                    <a href="quiz.html" class="btn-primary">Ready to Practice?</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="/js/api.js"></script>
+    <script src="/js/learning.js"></script>
+    <script src="/js/chatbot.js"></script>
+</body>
+</html>
